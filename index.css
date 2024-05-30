@@ -1,85 +1,129 @@
+/* Reset e configurações básicas */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: Inter, sans-serif;
 }
 
 body {
-    background: linear-gradient(135deg, #153677, #4e085f);
-    min-height: 100vh;
+    background-color: #0D0D0D;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
 
-.container {
-    background-color: #fff;
-    padding: 50px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 500px;
+/* Estilos do container principal */
+.container { /* Fundo levemente transparente */
+    background-color: #e3e3e3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
 }
 
-.todo-container {
-    display: flex;
-    margin-bottom: 20px;
+/* Estilos do logotipo */
+img {
+    width: 100px;
+    margin-bottom: 15px;
 }
 
-.input-group {
+/* Estilos do input e botão de adicionar tarefa */
+.input-container {
     display: flex;
     margin-bottom: 20px;
 }
 
 .todo-input {
     flex: 1;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px 0 0 6px; /* Arredondamento apenas do lado esquerdo */
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
     font-size: 16px;
-    background: #EDEEF0;
-    border-style: none;
+    background-color: #d6d6d6;
+    outline: none;
 }
 
-
+.todo-input::placeholder {
+    color: #acacac;
+    font-size: 14px;
+}
 
 .add-btn {
-    padding: 5px 20px;
-    background-color: #153677;
-    color: #fff;
+    padding: 10px 20px;
+    background-color: #6321BF;
+    color: #ffffff;
     border: none;
-    border-radius: 0 6px 6px 0; /* Arredondamento apenas do lado direito */
-    font-size: 16px;
+    border-radius: 0 25px 25px 0;
+    font-size: 14px;
     cursor: pointer;
+    font-weight: 600;
 }
 
+.add-btn:hover {
+    background-color: #5b23ac;
+    transition: .3s ease-in-out;
+}
 
+/* Estilos da lista de tarefas */
 .todo-list {
-    list-style-type: none;
+    list-style: none;
 }
 
 .todo-item {
     display: flex;
     align-items: center;
+    padding: 10px;
+    border-radius: 5px;
     margin-bottom: 10px;
 }
 
-.todo-item span {
-    flex: 1;
-    word-break: break-all;
-}
-
-.delete-btn {
-    margin-left: 10px;
-    padding: 5px 10px;
-    background-color: #ff4d4d;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
+/* Estilos dos checkboxes */
+.form-check-input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
     cursor: pointer;
+    margin: 0 10px 0 -10px;
+    position: relative;
 }
 
-#checkForm {
-    display: none;
+.form-check-input:checked {
+    border-color: #6321BF;
+    background-color: #6321BF;
+}
+
+.form-check-input:checked::before {
+    content: '\F26E';
+    color: #fff;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Estilos das labels */
+.form-check-label {
+    flex: 1;
+    cursor: pointer;
+    font-weight: 400;
+    color: #0D0D0D;
+}
+
+.form-check-label.checked {
+    text-decoration: line-through;
+    color: rgb(189, 189, 189);
+    font-weight: 400;
+}
+
+/* Estilo do ícone de check */
+.form-check-input.bi-check {
+    font-size: 1.2rem;
+    color: #FF4500;
 }
